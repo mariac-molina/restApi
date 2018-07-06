@@ -1,0 +1,137 @@
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+   <div class="content-wrapper">
+    <div class="container-fluid">
+     
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#"></a>
+        </li>
+        <li>Projets détaillés</li>
+      </ol>
+
+      <div class="row2"
+         class="col-xl-4 col-sm-8 mb-42" class="active">
+          <div class="card mb-3">
+            <div class="card-header">Enjeux</div>
+              <div class="card-body">
+               <br>
+                <div id="enj">
+               <input type="text" class="style" placeholder="Libelle">
+               <br>
+               <br>
+               <input type="text" class="style" placeholder="Description"></div>
+               <br>
+
+               <div align="right"><button id="add-more" name="add-more" class="btn btn-primary" onclick="myFunction()">+</button></div>
+               
+              <button type="submit" class="btn btn-primary mb-2">Valider</button>
+              
+            </div>
+
+          </div>
+        
+        </div>
+         <div class="row2"
+         class="col-xl-4 col-sm-8 mb-42" class="active">
+          <div class="card mb-3">
+            <div class="card-header">Objectif</div>
+              <div class="card-body">
+               <br>
+                <div id="obj">
+               <input type="text" class="style" placeholder="Libelle">
+               <br>
+               <br>
+               <input type="text" class="style" placeholder="Description"></div>
+
+                <br>
+
+              <div align="right"> <button id="add-more" name="add-more" class="btn btn-primary" onclick="myFunction()">+</button></div>
+                 
+              <button type="submit" class="btn btn-primary mb-2">Valider</button>
+               
+            </div>
+          
+        	</div>     
+        </div> 
+        <div class="row2"
+         class="col-xl-4 col-sm-8 mb-42" class="active">
+          <div class="card mb-3">
+            <div class="card-header">Fonctionnalités</div>
+              <div class="card-body">
+               <br>
+                <div id="fonct">
+                
+               <input type="text" class="style" placeholder="Libelle">
+               <br>
+               <br>
+               <input type="text" class="style" placeholder="Description"></div>
+                <br>
+              <div align="right"> <button id="add-more" name="add-more" class="btn btn-primary" onclick="myFunction(add-more)">+</button></div>
+               
+               <button type="submit" class="btn btn-primary mb-2">Valider</button>
+            </div>
+          </div>
+        
+     	</div>
+      <div class="row2"
+        class="col-xl-4 col-sm-8 mb-42" class="active">
+          <div class="card mb-3">
+            <div class="card-header" style="background-color:rgb(160,30,120);"><strong>Solution Alléa</strong></div>
+              <div class="card-body">
+               <br>
+                <div id="solu">
+                 <input type="text" class="style" placeholder="solution"></div>
+                 <br>
+                 <br>
+           <div align="right"><button id="add-more" name="add-more" class="btn btn-primary" onclick="myFunction()">+</button></div>
+                
+                <button type="submit" class="btn btn-primary mb-2">Valider</button>
+              </div>
+
+          </div>
+        </div>
+
+   <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+   </div>
+</div>
+
+</body>
+<router-outlet></router-outlet>
+    <!--   <script>
+
+    var room = 1;
+    function myFunction(myName) {
+          room++;
+          var objTo = document.getElementById(myName)
+          var divtest = document.createElement("div");
+          
+          divtest.setAttribute("class", "style-group removeclass"+room);
+          var rdiv = 'removeclass'+room;
+            divtest.innerHTML =
+            `
+            <div class="row2" class="col-xl-4 col-sm-8 mb-42">
+              <br>
+               <hr>
+               <br>
+                <input type="text" class="style" placeholder="Libelle">
+                <br>
+                <br>
+               <input type="text" class="style" placeholder="Description">
+                <br>
+                <br>
+                <button class="btn btn-danger" type="button" onclick="remove_ajout('${room}');">-</button>
+            </div>
+            `
+            objTo.appendChild(divtest)
+
+        }
+        function remove_ajout(rid) {
+          $('.removeclass'+rid).remove();
+        }
+    </script>-->
+    
+   
+   

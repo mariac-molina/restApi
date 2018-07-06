@@ -1,0 +1,153 @@
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+
+        <li>Organismes</li>
+      </ol>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-body">
+               <div class="row">
+                <div class="col" for="nom">
+                  <input type="text " class="form-control" name="nom" placeholder="Libelle Organisme" ngModel>
+                </div>
+                <div class="col" for="adresse">
+                  <input type="text" class="form-control" name="adresse" placeholder="Adresse Organisme" ngModel>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col" for="ville">
+                  <input type="text" class="form-control" name="ville" placeholder="Ville Organisme" ngModel>
+                </div>
+                <div class="col" for="pays">
+                  <input type="text" class="form-control" name="pays" placeholder="Pays Organisme" ngModel>
+                </div>
+                </div>
+              <br>
+              <div class="row" >
+                <div class="col">
+                    <div class="form-group" for="secteur">
+                      <label for="sel1">Secteur d'activite:</label>
+                       <select class="form-control" name="secteur" ngModel>
+                        <option></option>
+                        <option>Agroalimentaire</option>
+                        <option>Banque / Assurance</option>
+                        <option>Bois / Papier / Carton / Imprimerie</option>
+                        <option>BTP / Matériaux de construction</option>
+                        <option>Chimie / Parachimie</option>
+                        <option>Commerce / Négoce / Distribution</option>
+                        <option>Édition / Communication / Multimédia</option>
+                        <option>Électronique / Électricité</option>
+                      </select>
+                    </div>
+                </div>
+              </div>
+             </div>
+            <div class="row">
+             <div class="col" align="right">
+              <button type="submit" class="btn btn-primary mb-2">Creer Organisme</button>
+             </div>
+            </div>
+          </div>
+         </div>
+        </form>
+      </div>
+
+      <div class="container-fluid">
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Organismes Existants</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered"width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Libelle</th>
+                  <th>Adresse</th>
+                  <th>Ville</th>
+                  <th>Pays</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Id</th>
+                  <th>Libelle</th>
+                  <th>Adresse</th>
+                  <th>Ville</th>
+                  <th>Pays</th>
+                  <th>Action</th>
+                </tr>
+              </tfoot>
+              <tbody>
+
+                <tr *ngFor="let orga of organismes">
+
+                  <td>{{ orga.id }}</td>
+                  <td>{{ orga.OrganismeLibelle }}</td>
+                  <td>{{ orga.OrganismeAdresse }}</td>
+                  <td>{{ orga.OrganismeVille }}</td>
+                  <td>{{ orga.OrganismePays }}</td>
+                  <td>  <div>
+                        <button type="submit" class="btn btn-primary mr-2" data-toggle="modal" [attr.data-target]="'#' + orga.id">Modifier</button>
+                        <button type="submit" class="btn btn-danger mr-2" (click)="deleteOrganismes(orga.id)" >Supprimer</button>
+                      </div>
+                        <div class="modal fade" id="{{ orga.id }}" tabindex="-1" role="dialog" aria-labelledby="modifModalLabel" aria-hidden="true">
+                           <div class="modal-dialog" role="document">
+                             <div class="modal-content">
+                               <div class="modal-header">
+                                 <h5 class="modal-title" id="modifModalLabel">Modification</h5>
+                                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                   <span aria-hidden="true">×</span>
+                                 </button>
+                               </div>
+                               <form (ngSubmit)="onModif(f, orga.id, name.value, address.value, city.value, country.value)" #f="ngForm">
+                               <input type="hidden" name="idmodif" value="{{ orga.id }}">
+                                 <div class="modal-body">
+                                    <div class="row">
+                                      <div class="col" for="nom">
+                                        <input #name type="text" class="form-control" value="{{ orga.OrganismeLibelle }}">
+                                      </div>
+                                      <div class="col" for="adresse">
+                                        <input #address type="text" class="form-control" value="{{ orga.OrganismeAdresse }}">
+                                      </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                      <div class="col" for="ville">
+                                        <input #city type="text" class="form-control" value="{{ orga.OrganismeVille }}">
+                                      </div>
+                                      <div class="col" for="pays">
+                                        <input #country type="text" class="form-control" value="{{ orga.OrganismePays }}">
+                                      </div>
+                                    </div>
+                                    <br>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                                    <button type="submit" class="btn btn-primary">Modifier Organisme</button>
+                                  </div>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+         </div>
+        <div class="card-footer small text-muted">Organismes Existants</div>
+       </div>
+     </div>
+    </div>
+
+
+
+   </body>

@@ -1,0 +1,49 @@
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <div class="content-wrapper">
+
+    <div class="container-fluid">
+      <ol class="breadcrumb">
+
+        <li>Creation du projet</li>
+      </ol>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row" >
+          <div class="col">
+            <div class="form-group">
+              <label for="orga">Selectionnez l'organisme</label>
+              <select class="form-control" name="orga" ngModel>
+                <option></option>
+                <option *ngFor="let orga of organismes" value="{{ orga.id }}" (click)="clicked($event, item)">{{ orga.OrganismeLibelle }}</option>
+              </select>
+              <br>
+              <button type="submit" class="btn btn-primary mb-2">Valider</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="dropdown col" dropdown is-open="myNavDropdown.isopen">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+          Selectionnez l'organisme
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li *ngFor="let item of organismes" class="dropdown-item" (click)="clicked($event, item)">{{ item.OrganismeLibelle }}</li>
+        </ul>
+      </div>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <li class="page-item"><a class="page-link" routerLink ="/admin/creation/enjeux">Commencez la <em>création</em></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+
+
+</body>
+<router-outlet></router-outlet>

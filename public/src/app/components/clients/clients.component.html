@@ -1,0 +1,132 @@
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" style="color: white">Allea-Solutions</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projets">
+          <a class="nav-link" routerLink="projet">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Projets</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+       <a class="nav-link" style="color: white">
+           Nom du client</a>
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Recherche...">
+              <span class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+
+        </li>
+        <li class="nav-item">
+          <a routerLink ="/" class="nav-link" data-toggle="modal" data-target="#exampleModal">
+           <i class="fa fa-fw fa-sign-out"></i>Déconnexion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Etes-vous sûr de vouloir quitter?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous souhaitez mettre fin à votre session en cours.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+            <a class="btn btn-primary" routerLink ="/" data-dismiss="modal">Déconnexion</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<router-outlet></router-outlet>
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+
+           <li>Nom du Projet</li>
+
+      </ol>
+      <div class="row2"
+          class="col-xl-4 col-sm-8 mb-42">
+          <div class="card mb-3">
+           <div class="card-header">Enjeux</div>
+            <div id='1'>
+              <div class="card-body">
+               <br>
+          </div>
+         </div>
+       </div>
+      </div>
+      <div class="row2"
+          class="col-xl-4 col-sm-8 mb-42">
+          <div class="card mb-3">
+           <div class="card-header">Objectifs</div>
+             <div id='2'>
+              <div class="card-body">
+               </div>
+               <br>
+          </div>
+       </div>
+      </div>
+
+     <div class="row2"
+          class="col-xl-4 col-sm-8 mb-42">
+          <div class="card mb-3">
+          <div class="card-header">Fonctionnalités</div>
+             <div id='3'>
+              <div class="card-body">
+               <br>
+            </div>
+         </div>
+       </div>
+      </div>
+
+      <div class="row2"
+        class="col-xl-4 col-sm-8 mb-42">
+          <div class="card mb-3">
+            <div class="card-header" style="background-color:rgb(150,50,218);"><strong>Solution(s) Alléa</strong></div>
+              <div id='4'>
+              <div class="card-body">
+              <br>
+          </div>
+          </div>
+        </div>
+       </div>
+
+    </div>
+   </div>
+
+<footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Alléa-solutions 2018</small>
+        </div>
+      </div>
+    </footer>
+      </body>

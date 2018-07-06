@@ -1,0 +1,158 @@
+  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+   <div class="content-wrapper">
+    <div class="container-fluid">
+     
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#"></a>
+        </li>
+        <li>Creation du projet</li>
+      </ol>
+      <h1 style="text-align: center;">Solutions</h1>
+<br>
+    
+     <form (ngSubmit)="onSubmit(fs)" #fs="ngForm">
+<div class="row2"
+         class="col-xl-4 col-sm-8 mb-42" class="active">
+         
+            <div class="card-header"><strong>Solutions</strong></div>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Libelle</th>
+            
+            <th>Logiciel</th>
+            <th>Mode</th>
+            <th>Coût Service</th>
+            <th>Coût Abonnement</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field3 of solutionFields; let i = index">
+          <td>
+                <input [(ngModel)]="field3.libelleSol" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field3.libelleSol}}" />
+            </td>
+            <!-- <td>
+                <input [(ngModel)]="field3.descriptionSol" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field3.descriptionSol}}" />
+            </td>  -->
+             <td>
+                <input [(ngModel)]="field3.logicielSol" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field3.logicielSol}}" />
+            </td>
+             <td>
+                <input [(ngModel)]="field3.modeSol" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field3.modeSol}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="field3.coutServiceSol" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field3.coutServiceSol}}" />
+            </td>
+             <td>
+                <input [(ngModel)]="field3.coutAbonSol" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field3.coutAbonSol}}" />
+            </td>
+            <td>
+                <button class="btn btn-danger mb-2"  type="button" (click)="deleteFieldValueSol(i, solutionFields, field3.id)">-</button>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control" type="text" [(ngModel)]="newAttribute.libelleSolu" name="newLibelleSolu" />
+            </td>
+         
+            <!-- <td>
+                <input class="form-control" type="text" [(ngModel)]="newAttribute.descriptionSol" name="newDescriptionSol" />
+            </td>  -->
+              <td>
+                <input class="form-control" type="text" [(ngModel)]="newAttribute.logiSol" name="newLogicielSol" />
+                <br>
+            </td>
+         
+            <td>
+                <input class="form-control" type="text" [(ngModel)]="newAttribute.descriptionSol" name="newModeSol" />
+            </td>
+              <td>
+                <input class="form-control" type="text" [(ngModel)]="newAttribute.coutService" name="newCoutServSol" />
+            </td>
+         
+            <td>
+                <input class="form-control" type="text" [(ngModel)]="newAttribute.coutAbon" name="newCoutAbonSol" />
+            </td>
+            
+            <td>
+                <button style="margin-right: 10px" class="btn btn-primary mb-2"  type="button" (click)="addFieldValueSol(solutionFields,fs)">+</button>
+                <button type="submit" class="btn btn-primary mb-2">Valider</button> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</form>
+
+<br>
+
+  <form (ngSubmit)="onSubmit(fs)" #fs="ngForm">
+<div class="row2"
+         class="col-xl-4 col-sm-8 mb-42" class="active">
+
+ <div class="card-header" style="background-color: rgb(160,30,120);"><strong>Prestation Alléa</strong></div>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Libelle</th>
+            <th>Solution</th>
+            <th>Coût</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field4 of solutionFields; let i = index">
+        <td>
+                <input [(ngModel)]="field4.solAllea" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field3.solAllea}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="field4.solution" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field4.solution}}" />
+            </td>
+            <td>
+                <input [(ngModel)]="field4.coutSol" [ngModelOptions]="{standalone: true}" class="form-control" type="text" name="{{field4.coutSol}}" />
+            </td>
+            <td>
+                <button class="btn btn-danger mb-2"  type="button" (click)="deleteFieldValueSol(i, solutionFields, field4.id)">-</button>
+            </td>
+            </tr>
+        <tr>
+        <td>
+            <input class="form-control" type="text" [(ngModel)]="newAttribute.lib" name="newLib" />
+            </td>
+            <td>
+                <input class="form-control" type="text" [(ngModel)]="newAttribute.solution" name="newSolAllea" />
+            </td>
+         
+            <td>
+                <input class="form-control" type="text" [(ngModel)]="newAttribute.cout" name="cout" />
+            </td>
+                        
+            <td>
+                <button style="margin-right: 10px" class="btn btn-primary mb-2"  type="button" (click)="addFieldValueSol(solutionFields,fs)">+</button>
+                <button type="submit" class="btn btn-primary mb-2">Valider</button> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</form>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item"><a class="page-link" routerLink ="/admin/creation/fonction">Revenir aux <em>Fonctionnalités</em></a></li>
+    <li class="page-item"><a class="page-link" routerLink="/admin/projet/visu">Visualiser le <strong>projet</strong></a></li>
+  </ul>
+</nav>
+
+   <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+   </div>
+</div>
+
+
+</body>
+<router-outlet></router-outlet>

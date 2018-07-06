@@ -1,0 +1,85 @@
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+         
+        </li>
+        <li>Projets</li>
+      </ol>
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Nom Projet" ng-model="nom">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Nom Organisme">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Description Projet">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col">
+                </div>
+                <div class="col" align="right">
+
+                <button type="submit" class="btn btn-primary mb-2" ng-submit="submit">Creer Projet</button>
+              </div>
+              </div>
+
+              </form>
+          </div>
+        </div>
+      </div>
+      </div>
+       <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Projets Existants</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" c cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Projet</th>
+                  <th>Organisme</th>
+                  <th>Description</th>
+                  <th width="20%">Action</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Projet</th>
+                  <th>Organisme</th>
+                  <th>Description</th>
+                  <th>Action</th>
+                  </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td data-ng-controller="main-controller" data-ng-bind="get_projet()"></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                  <a class="btn btn-primary mb-2" routerLink="/logged/projet/visu">Visualiser</a>
+                  <a class="btn btn-danger mb-2">Supprimer</a></td>
+                </tr>
+              </tbody>
+            </table>
+           </div>
+          </div>
+         <div class="card-footer small text-muted">Projets Existants</div>
+      </div>
+    </div>
+  </body>
+  <router-outlet></router-outlet>
